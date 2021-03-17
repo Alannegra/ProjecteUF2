@@ -1,6 +1,7 @@
 package com.company;
 
 public class Menu {
+
     String elegirOpcion(String[] opciones){
 
         boolean seguirPidiendo = true;

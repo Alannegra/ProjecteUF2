@@ -5,10 +5,10 @@ public class ScreenMenu {
     boolean mostrar(){
 
     Tittle tittle = new Tittle();
-    tittle.mostrar("BLOC DE NOTAS");
+    tittle.mostrar("AGENDA DE CONTACTOS");
 
     Menu menu = new Menu();
-    String[] opciones = {"Crear", "Listar", "Salir"};
+    String[] opciones = {"Crear", "Listar", "Borrar" , "Salir"};
     String opcion = menu.elegirOpcion(opciones);
 
         if ("1".equals(opcion)) {
@@ -18,6 +18,10 @@ public class ScreenMenu {
         ScreenList screenList = new ScreenList();
         screenList.mostrar();
     } else if("3".equals(opcion)){
+            ScreenDelete screenDelete = new ScreenDelete();
+            screenDelete.mostrar();
+
+        } else if("4".equals(opcion)){
         return false;
     }
         return true;
