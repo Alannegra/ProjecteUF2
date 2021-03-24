@@ -5,12 +5,15 @@ public class Tittle {
     void mostrar(String tittle){
 
 
-        String marco = "+";
+        String marco1 = "┏";
 
-        String marco2 = "|  ";
+        String marco2 = "┃  ";
+
+        String marco3 = "┗";
 
         for (int i = 0; i < tittle.length()+4 ; i++) {
-            marco+="-";
+            marco1+="━";
+            marco3+="━";
 
             //if(i < tittle.length()){
               //  marco2+= tittle.charAt(i);
@@ -19,13 +22,14 @@ public class Tittle {
         }
 
         marco2+= tittle;
-        marco+="+";
-        marco2+="  |";
+        marco1+="┓";
+        marco2+="  ┃";
+        marco3+="┛";
 
 
-        System.out.println(marco);
+        System.out.println(marco1);
         System.out.println(marco2);
-        System.out.println(marco);
+        System.out.println(marco3);
         System.out.println();
 
     }
