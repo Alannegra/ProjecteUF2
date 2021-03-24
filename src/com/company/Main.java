@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
         ScreenMenu screenMenu = new ScreenMenu();
-        while(screenMenu.mostrar()) { }
+        while(screenMenu.mostrar()) {}
 
 
     }

@@ -8,7 +8,7 @@ public class CreateScreen {
         Contact contacts = new Contact();
 
         System.out.println("Titulo del mensaje:");
-        contacts.tittle = Main.scanner.nextLine();
+        contacts.name = Main.scanner.nextLine();
 
         System.out.println("Contenido del mensaje:");
         contacts.description = Main.scanner.nextLine();

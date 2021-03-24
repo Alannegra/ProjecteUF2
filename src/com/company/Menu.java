@@ -7,11 +7,17 @@ public class Menu {
         boolean seguirPidiendo = true;
         String opcion = "";
         while(seguirPidiendo) {
+
             for (int i = 0; i < opciones.length; i++) {
-                System.out.println((i + 1) + ". " + opciones[i]);
+                System.out.print((i + 1) + ". " + opciones[i] + "  ");
+                if(i % 2 != 0 ){
+                    System.out.println();
+                }
+
             }
 
-            System.out.println("\nOpcion:");
+            String ask = "\nOpcion:";
+            System.out.println(ask);
 
             opcion = Main.scanner.nextLine();
 
