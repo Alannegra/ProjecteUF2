@@ -3,7 +3,7 @@ package com.company;
 public class ScreenLanguage {
 
    static int idioma = 0;
-    String[][] opciones = {{"Crear ", "Listar", "Borrar", "Color", "Idioma", "Salir"},{"Создайте", "Список", "Удалить", "Цвет", "Идиома", "Покинуть"},{"Create ", "List", "Delete", "Color", "Idiom", "Leave"},{"Créer", "Liste", "Supprimer", "Couleur", "Langue", "Quitter"},{"Δημιουργία", "Λίστα", "Διαγραφή", "Χρώμα", "Γλώσσα", "Έξοδος"}};
+    String[][] opciones = {{"Crear ", "Listar", "Borrar", "Color", "Idioma", "Salir"},{"Создайте", "Список", "Удалить ", "Цвет", "Идиома  ", "Покинуть"},{"Create", "List", "Delete", "Color", "Idiom ", "Exit"},{"Créer    ", "Liste", "Supprimer", "Couleur", "Langue   ", "Quitter"},{"Δημιουργία", "Λίστα", "Διαγραφή  ", "Χρώμα", "Γλώσσα    ", "Έξοδος"}};
     String[] titlelan = {"AGENDA DE CONTACTOS", "КОНТАКТНАЯ ПОВЕСТКА ДНЯ", "CONTACT BOOK","CONTACTER AGENDA","ΗΜΕΡΟΜΗΝΙΑ ΕΠΙΚΟΙΝΩΝΙΑΣ"};
     void mostrar() {
         Tittle tittle = new Tittle();
