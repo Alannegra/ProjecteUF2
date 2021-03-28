@@ -6,13 +6,13 @@ public class ScreenMenu {
         ScreenLanguage screenLanguage = new ScreenLanguage();
 
         Tittle tittle = new Tittle();
-        tittle.mostrar("AGENDA DE CONTACTOS");
+        tittle.mostrar(screenLanguage.titlelan[screenLanguage.idioma]);
 
         Menu menu = new Menu();
 
 
 
-        String opcion = menu.elegirOpcion(screenLanguage.opciones[0]);
+        String opcion = menu.elegirOpcion(screenLanguage.opciones[screenLanguage.idioma]);
 
         if ("1".equals(opcion)) {
             CreateScreen createScreen = new CreateScreen();

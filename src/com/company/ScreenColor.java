@@ -8,7 +8,7 @@ public class ScreenColor {
 
         Menu menu = new Menu();
 
-        String[] colores = {"Rojo ", "Azul", "Verde", "Amarillo", "Rosa ", "Salir"};
+        String[] colores = {"Rojo ", "Azul", "Verde", "Amarillo", "Lila ", "Salir"};
         String color = menu.elegirOpcion(colores);
 
 
@@ -19,22 +19,22 @@ public class ScreenColor {
         } else if ("2".equals(color)) {
             System.out.println(ANSI_RESET);
             System.out.println(ANSI_BLUE);
-            System.out.println("Usted a selecionado el color: " + colores[1]);
+            System.out.println("Usted a selecionado el color: " + colores[Integer.valueOf(color)-1]);
 
         } else if ("3".equals(color)) {
             System.out.println(ANSI_RESET);
-            System.out.println(ANSI_RED);
-            System.out.println("Usted a selecionado el color: " + colores[0]);
+            System.out.println(ANSI_GREEN);
+            System.out.println("Usted a selecionado el color: " + colores[Integer.valueOf(color)-1]);
 
         } else if ("4".equals(color)) {
             System.out.println(ANSI_RESET);
-            System.out.println(ANSI_RED);
-            System.out.println("Usted a selecionado el color: " + colores[0]);
+            System.out.println(ANSI_YELLOW);
+            System.out.println("Usted a selecionado el color: " + colores[Integer.valueOf(color)-1]);
 
         } else if ("5".equals(color)) {
             System.out.println(ANSI_RESET);
-            System.out.println(ANSI_RED);
-            System.out.println("Usted a selecionado el color: " + colores[0]);
+            System.out.println(ANSI_PURPLE);
+            System.out.println("Usted a selecionado el color: " + colores[Integer.valueOf(color)-1]);
 
         } else if ("6".equals(color)) {
 
@@ -64,12 +64,7 @@ public class ScreenColor {
 
 
 
-    String pedir(String prompt) {
 
-        System.out.println("\033[31m" + prompt + ":\033[0m");
-
-    return prompt;
-    }
 
 
 
