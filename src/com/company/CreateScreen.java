@@ -9,8 +9,16 @@ public class CreateScreen {
 
 
 
+        System.out.println("Nombre");
+
+        contacts.name = Main.scanner.nextLine();
+
+        System.out.println("Telefono");
+
+        contacts.telefon = Main.scanner.nextLine();
 
         Main.agendaDeContactos.contacts.add(contacts);
+
     }
 }
 

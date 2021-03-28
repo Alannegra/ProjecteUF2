@@ -39,12 +39,12 @@ import java.util.List;
             }
         }
 
-        public void insertContact(String name, double telefon) {
+        public void insertContact(String name, String telefon) {
             String sql = "INSERT INTO estudiantes(name,telefon) VALUES(?,?)";
 
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
                 preparedStatement.setString(1, name);
-                preparedStatement.setDouble(2, telefon);
+                preparedStatement.setString(2, telefon);
                 preparedStatement.executeUpdate();
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
@@ -62,7 +62,7 @@ import java.util.List;
                     String name = resultSet.getString("name");
                     String telefon = resultSet.getString("telefon");
 
-                    Contacts.add(new Contact(name, telefon));
+                    Contacts.add(new Contact());
                 }
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
@@ -71,19 +71,19 @@ import java.util.List;
             return Contacts;
         }
 
-        public List<Contact> selectContactsConNotaSuperiorA(double telefonMinima){
+        public List<Contact> selectContactsConNotaSuperiorA(String telefonMinima){
             String sql = "SELECT name, telefon FROM estudiantes WHERE telefon > ?";
 
             List<Contact> Contacts = new ArrayList<>();
             try (PreparedStatement preparedStatement  = connection.prepareStatement(sql)){
 
-                preparedStatement.setDouble(1, telefonMinima);
+                preparedStatement.setString(1, telefonMinima);
                 ResultSet resultSet  = preparedStatement.executeQuery();
                 while (resultSet.next()) {
                     String name = resultSet.getString("name");
                     String telefon = resultSet.getString("telefon");
 
-                    Contacts .add(new Contact(name, telefon));
+                    Contacts.add(new Contact());
                 }
             } catch (SQLException e) {
                 System.out.println(e.getMessage());

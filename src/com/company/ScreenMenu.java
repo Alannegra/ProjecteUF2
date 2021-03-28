@@ -3,15 +3,16 @@ package com.company;
 public class ScreenMenu {
 
     boolean mostrar() {
+        ScreenLanguage screenLanguage = new ScreenLanguage();
 
         Tittle tittle = new Tittle();
         tittle.mostrar("AGENDA DE CONTACTOS");
 
         Menu menu = new Menu();
-        String[] opciones = {"Crear ", "Listar", "Borrar", "Color", "Idioma", "Salir"};
 
 
-        String opcion = menu.elegirOpcion(opciones);
+
+        String opcion = menu.elegirOpcion(screenLanguage.opciones[0]);
 
         if ("1".equals(opcion)) {
             CreateScreen createScreen = new CreateScreen();
@@ -26,7 +27,6 @@ public class ScreenMenu {
             ScreenColor screenColor = new ScreenColor();
             screenColor.mostrar();
         } else if ("5".equals(opcion)) {
-            ScreenLanguage screenLanguage = new ScreenLanguage();
             screenLanguage.mostrar();
         }else if ("6".equals(opcion)) {
             return false;
