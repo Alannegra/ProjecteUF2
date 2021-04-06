@@ -7,12 +7,18 @@ public class CreateScreen {
 
         Contact contacts = new Contact();
 
-        System.out.println("Titulo del mensaje:");
-        contacts.tittle = Main.scanner.nextLine();
 
-        System.out.println("Contenido del mensaje:");
-        contacts.description = Main.scanner.nextLine();
+
+        System.out.println("Nombre");
+
+        contacts.name = Main.scanner.nextLine();
+
+        System.out.println("Telefono");
+
+        contacts.telefon = Main.scanner.nextLine();
 
         Main.agendaDeContactos.contacts.add(contacts);
+
     }
 }
+

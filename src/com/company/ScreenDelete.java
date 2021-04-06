@@ -4,30 +4,49 @@ import java.util.Scanner;
 
 public class ScreenDelete {
     static Scanner scanner = new Scanner(System.in);
-    void mostrar(){
+    boolean mostrar(){
         Tittle tittle = new Tittle();
-        tittle.mostrar("\033[31m" + "BORRAR CONTACTO" + "\033[0m");
+        tittle.mostrar("BORRAR CONTACTO");
 
-        int position = -1;
 
-        for(Contact contacts: Main.agendaDeContactos.contacts){
-            System.out.println(contacts.tittle);
+
+        String[] array = new String[Main.agendaDeContactos.contacts.size()+1];
+
+
+
+        for (int i = 0; i < array.length -1 ; i++) {
+
+            array[i] = Main.agendaDeContactos.contacts.get(i).name;
+
         }
 
-        Contact contacts = new Contact();
+        array[array.length -1] = "salir";
 
-        System.out.println("Numero de la posicion del Contacto");
-        position = Main.scanner.nextInt();
-
+        Menu menu = new Menu();
 
 
-        String firstName = list.get(0);         //alex
+        System.out.println("Numero de la posicion del Contacto: ");
+
+        String position = menu.elegirOpcion(array);
+
+    
+
+        int index = Integer.valueOf(position)-1;
 
 
-        System.out.println(firstName);
+        if(index == array.length -1){
+            return false;
+        }
+        String firstName = Main.agendaDeContactos.contacts.get(index).name;
+        Main.agendaDeContactos.contacts.remove(index);
 
-        System.out.println(contacts[position].tittle);
 
+        for ( Contact c : Main.agendaDeContactos.contacts) {
+
+            System.out.println(c.name);
+        }
+
+        return true;
 
     }
 }
