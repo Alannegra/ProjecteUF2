@@ -25,5 +25,17 @@ public class ScreenList {
             }
         }
 
+
+
+
+        boolean seguir = true;
+        while(seguir){
+            System.out.println("Dale al Enter para seguir");
+            String enter = Main.scanner.nextLine();
+            if(enter.equals("")){
+                seguir = false;
+            }
+        }
+
     }
 }

@@ -1,4 +1,5 @@
 package com.company;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -83,7 +84,7 @@ import java.util.List;
                     String name = resultSet.getString("name");
                     String telefon = resultSet.getString("telefon");
 
-                    Contacts.add(new Contact());
+                    Contacts.add(new Contact(name, telefon));
                 }
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
