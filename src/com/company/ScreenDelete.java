@@ -38,6 +38,7 @@ public class ScreenDelete {
             return false;
         }
         String firstName = Main.agendaDeContactos.contacts.get(index).name;
+
         Main.agendaDeContactos.contacts.remove(index);
 
 

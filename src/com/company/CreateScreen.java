@@ -5,19 +5,17 @@ public class CreateScreen {
         Tittle tittle = new Tittle();
         tittle.mostrar("CREAR NOTA");     // tittle = "CREAR NOTA"
 
-        Contact contacts = new Contact();
-
-
-
         System.out.println("Nombre");
 
-        contacts.name = Main.scanner.nextLine();
+        String name = Main.scanner.nextLine();
 
         System.out.println("Telefono");
 
-        contacts.telefon = Main.scanner.nextLine();
+        String telefon = Main.scanner.nextLine();
 
-        Main.agendaDeContactos.contacts.add(contacts);
+        Main.db.insertContact(name, telefon);
+
+//        Main.agendaDeContactos.contacts.add(contacts);
 
     }
 }

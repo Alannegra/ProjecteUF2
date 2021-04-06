@@ -5,7 +5,7 @@ public class ScreenList {
         Tittle tittle = new Tittle();
         tittle.mostrar("Lista de Contactos");
 
-        for(Contact c: Main.agendaDeContactos.contacts){
+        for(Contact c: Main.db.selectContacts()){
 
 
             System.out.println(c.name);
@@ -17,7 +17,7 @@ public class ScreenList {
         String textoABuscar = Main.scanner.nextLine();
 
 
-        for(Contact nota: Main.agendaDeContactos.contacts){
+        for(Contact nota: Main.db.selectContactsConNombre(textoABuscar)){
             if(nota.name.contains(textoABuscar)){
                 System.out.println(nota.name);
             } else {

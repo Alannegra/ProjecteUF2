@@ -16,6 +16,7 @@ import java.util.List;
 
                 try {
                     connection = DriverManager.getConnection(url);
+                    instance.createTables();
                 } catch (SQLException e) {
                     System.out.println(e.getMessage());
                 }
@@ -55,7 +56,7 @@ import java.util.List;
         public List<Contact> selectContacts(){
             String sql = "SELECT name, telefon FROM estudiantes";
 
-            List<Contact> Contacts = new ArrayList<>();
+            List<Contact> contacts = new ArrayList<>();
             try (PreparedStatement preparedStatement  = connection.prepareStatement(sql)){
 
                 ResultSet resultSet  = preparedStatement.executeQuery();
@@ -63,22 +64,22 @@ import java.util.List;
                     String name = resultSet.getString("name");
                     String telefon = resultSet.getString("telefon");
 
-                    Contacts.add(new Contact());
+                    contacts.add(new Contact(name, telefon));
                 }
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
             }
 
-            return Contacts;
+            return contacts;
         }
 
-        public List<Contact> selectContactsConNotaSuperiorA(String telefonMinima){
-            String sql = "SELECT name, telefon FROM estudiantes WHERE telefon > ?";
+        public List<Contact> selectContactsConNombre(String nameABuscar){
+            String sql = "SELECT name, telefon FROM estudiantes WHERE name LIKE ?";
 
             List<Contact> Contacts = new ArrayList<>();
             try (PreparedStatement preparedStatement  = connection.prepareStatement(sql)){
 
-                preparedStatement.setString(1, telefonMinima);
+                preparedStatement.setString(1, nameABuscar);
                 ResultSet resultSet  = preparedStatement.executeQuery();
                 while (resultSet.next()) {
                     String name = resultSet.getString("name");
