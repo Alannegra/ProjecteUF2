@@ -10,13 +10,13 @@ public class ScreenDelete {
 
 
 
-        String[] array = new String[Main.agendaDeContactos.contacts.size()+1];
+        String[] array = new String[Main.db.selectContacts().size()+1];
 
 
 
         for (int i = 0; i < array.length -1 ; i++) {
 
-            array[i] = Main.agendaDeContactos.contacts.get(i).name;
+            array[i] = Main.db.selectContacts().get(i).name;
 
         }
 
@@ -37,12 +37,14 @@ public class ScreenDelete {
         if(index == array.length -1){
             return false;
         }
-        String firstName = Main.agendaDeContactos.contacts.get(index).name;
+        String firstName = Main.db.selectContacts().get(index).name;
+        String phone = Main.db.selectContacts().get(index).telefon;
 
-        Main.agendaDeContactos.contacts.remove(index);
+        //AQUIIII
+        Main.db.deletethings(firstName,phone);
+        //AQUIIII
 
-
-        for ( Contact c : Main.agendaDeContactos.contacts) {
+        for ( Contact c : Main.db.selectContacts()) {
 
             System.out.println(c.name);
         }

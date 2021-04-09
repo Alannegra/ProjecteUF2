@@ -16,13 +16,13 @@ com/company/DataBase.java
  com.company.DataBase
 com/company/AgendaDeContactos.java
  com.company.AgendaDeContactos
-com/company/Delete.java
- com.company.Delete
-com/company/CreateScreen.java
- com.company.CreateScreen
-com/company/ScreenList.java
- com.company.ScreenList
 com/company/ScreenDelete.java
  com.company.ScreenDelete
 com/company/ScreenMenu.java
  com.company.ScreenMenu
+com/company/ScreenList.java
+ com.company.ScreenList
+com/company/CreateScreen.java
+ com.company.CreateScreen
+com/company/Delete.java
+ com.company.Delete
